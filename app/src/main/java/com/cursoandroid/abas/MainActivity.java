@@ -8,6 +8,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.cursoandroid.abas.fragment.AltaFragment;
+import com.cursoandroid.abas.fragment.HomeFragment;
+import com.cursoandroid.abas.fragment.InscricoesFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -29,11 +32,14 @@ public class MainActivity extends AppCompatActivity {
         //Configurar Adapter para as Abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                //.add("Home", )
+                .add("Home", HomeFragment.class)
+                .add("inscricoes", InscricoesFragment.class)
+                .add("Em Alta", AltaFragment.class)
                 .create());
 
 
+        viewPager.setAdapter(adapter);
+        smartTabLayout.setViewPager(viewPager);
     }
-
 
 }
