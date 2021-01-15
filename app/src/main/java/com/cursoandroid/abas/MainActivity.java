@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         smartTabLayout = findViewById(R.id.viewPagerTab);
         viewPager = findViewById(R.id.viewPager);
 
+        //Remover divisão da ActionBar
+        getSupportActionBar().setElevation(0);
+
         //Configurar Adapter para as Abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
